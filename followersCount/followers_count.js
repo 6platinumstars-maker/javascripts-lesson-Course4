@@ -6,6 +6,11 @@ function increaseCount() {
   checkCountValue(); // カウントの値をチェックしてメッセージを表示
 }
 
+function ResetCount() {
+    count = 0 ;
+    displayCount(); // カウントを表示
+}
+
 function displayCount() {
 document.getElementById('countDisplay').innerHTML=count; // HTMLにカウントを表示
 }
@@ -17,3 +22,5 @@ function checkCountValue() {
     alert("あなたのInstagram投稿が20人のフォロワーを獲得しました!その調子です!");
   }
 }
+
+
