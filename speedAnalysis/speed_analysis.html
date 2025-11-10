@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>スピードテスト分析</title>
+</head>
+<body>
+  <h1>スピードタイピング分析</h1>
+
+    <label for="inputText">以下のテキストを入力してください：</label><br>
+    <textarea id="inputText"  cols="50" rows="5" readonly placeholder="タイピングの準備をしてください..."></textarea><br>
+
+    <label for="userInput">あなたのタイピング：</label><br>
+    <textarea id="userInput"  cols="50" rows="5" placeholder="準備ができたらタイピングを開始してください"></textarea><br>
+    <button onclick="startTest()">テスト開始</button>
+    <button onclick="endTest()">テスト終了</button>
+    <div id="output"></div>
+    <script src="./speed_analysis.js"></script>
+</body>
+</html>

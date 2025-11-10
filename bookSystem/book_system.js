@@ -23,12 +23,13 @@ let books = [];
 
 // ２．入力された書籍を一覧にして表示する。
     function showbooks() {
-    const booksDiv = books.map((book, index) => `<h1>書籍番号: ${index + 1}</h1>
+    const booksDiv = books.map((book, index) =>`<h1>書籍番号: ${index + 1}</h1>
         <p><strong>書籍名: </strong>${book.name}</p>
         <p><strong>著者名:</strong> ${book.authorName}</p>
         <p><strong>書籍の説明:</strong> ${book.bookDescription}</p>
         <p><strong>ページ数:</strong> ${book.pagesNumber} ページ</p>
-        <button onclick="editbook(${index})">編集</button>`
+        <button onclick="editbook(${index})">編集</button>
+        <button onclick="deletebook(${index})">削除</button>`
     );
     document.getElementById('books').innerHTML = booksDiv.join('');
 }
@@ -53,3 +54,11 @@ function editbook(index) {
  }
 
 // ５．データをクリアにする。
+function deletebook(index) {
+    document.getElementById('bookName').value = '';
+    document.getElementById('authorName').value = '';
+    document.getElementById('bookDescription').value = '';
+    document.getElementById('pagesNumber').value = '';
+    books.splice(index, 1); // 古いエントリを削除
+    showbooks(); // リストを更新
+  }
