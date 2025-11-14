@@ -1,0 +1,451 @@
+/* =========================
+   ベース設定
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #f5f5f5;
+  color: #222;
+}
+
+/* =========================
+   ナビゲーションバー（全ページ共通）
+========================= */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 15px 30px;
+  position: fixed;   /* 上部固定 */
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.logo span {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.05rem;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffcc00;
+}
+
+/* 現在のページを強調 */
+.nav-links a.active {
+  border-bottom: 2px solid #ffcc00;
+  padding-bottom: 3px;
+}
+
+/* 検索エリア（Homeのみで使用） */
+.nav-search {
+  display: flex;
+  align-items: center;
+}
+
+.nav-search input {
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.nav-search button {
+  padding: 7px 12px;
+  margin-left: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #ff9900;
+  color: white;
+  transition: 0.3s;
+}
+
+.nav-search button:hover {
+  background-color: #e68a00;
+}
+
+/* ナビが固定なので、メインコンテンツを少し下げると隠れにくい */
+main {
+  padding-top: 80px;
+}
+
+/* =========================
+   Home ページ（.hero）
+========================= */
+
+.hero {  
+  background-image: url("Cherry-Blossoms.jpg"); /* ホームの背景画像 */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  position: relative;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 50px;
+  max-width: 40%;
+  margin: 0;
+  position: relative;
+  top: 0%;
+  left: 0%;
+  border-radius: 10px;
+}
+
+.hero-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.hero-overlay p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* ボタン & SNSリンク（Home） */
+
+.book-btn {
+  background-color: #ff9900;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.book-btn:hover {
+  background-color: #e68a00;
+}
+
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.social-icons a {
+  font-size: 2rem;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ffcc00;
+}
+
+/* =========================
+   検索結果表示エリア（Home）
+========================= */
+
+/* 右側に出す検索結果パネル */
+.results-panel {
+  margin-left: auto;               /* 右端に寄せる */
+  margin-right: 5%;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 50%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* 結果がないときはパネル自体を非表示にする */
+.results-panel:empty {
+  display: none;
+}
+
+
+.result-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   About ページ：ヒーロー（全画面背景）
+========================= */
+
+.about-hero {
+  background-image: url("1.jpg");  /* About用の背景画像に変更 */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+}
+
+.about-hero-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 50px;
+  max-width: 600px;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  border-radius: 10px;
+}
+
+.about-hero-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.about-hero-overlay p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* =========================
+   About ページ：本文エリア
+========================= */
+
+.about-main {
+  padding: 40px;
+  max-width: 1000px;
+  margin: 0 auto 40px;
+  background-color: #f9fafb;
+  border-radius: 12px;
+}
+
+.about-section {
+  margin-bottom: 40px;
+}
+
+.about-section h1,
+.about-section h2 {
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.about-section p,
+.about-section li {
+  line-height: 1.6;
+  color: #444;
+}
+
+.about-section ul {
+  padding-left: 20px;
+}
+
+/* チーム紹介レイアウト */
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.team-member {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.team-member .role {
+  font-weight: bold;
+  color: #ff9900;
+  margin-bottom: 8px;
+}
+
+/* =========================
+   Contact ページ
+========================= */
+
+.contact-main {
+  padding: 40px;
+  max-width: 800px;
+  margin: 80px auto 40px; /* 上のナビから少し余白 */
+  background-color: #f9fafb;
+  border-radius: 12px;
+}
+
+.contact-section {
+  margin-bottom: 30px;
+}
+
+.contact-section h1 {
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.contact-section p {
+  line-height: 1.6;
+  color: #444;
+}
+
+/* フォームレイアウト */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #ff9900;
+  box-shadow: 0 0 0 2px rgba(255, 153, 0, 0.2);
+}
+
+.submit-btn {
+  align-self: flex-start;
+  background-color: #ff9900;
+  border: none;
+  padding: 10px 24px;
+  font-size: 1rem;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #e68a00;
+}
+
+/* =========================
+   Contact ページ：全画面ヒーロー
+========================= */
+
+.contact-hero {
+  background-image: url("3.jpg"); /* Contact 用の画像に変更 */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+}
+
+/* ナビ固定分、少し余白を空ける */
+.contact-hero {
+  padding-top: 80px; /* navbar とかぶらないように */
+}
+
+.contact-hero-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 40px;
+  max-width: 600px;
+  border-radius: 10px;
+
+  position: absolute;
+  top: 15%;
+  left: 10%;
+}
+
+/* タイトルと本文 */
+.contact-hero-overlay h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+
+.contact-hero-overlay p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* フォーム（前に作ったもの流用） */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #fff; /* 黒背景の上なので白にする */
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #ff9900;
+  box-shadow: 0 0 0 2px rgba(255, 153, 0, 0.2);
+}
+
+.submit-btn {
+  align-self: flex-start;
+  background-color: #ff9900;
+  border: none;
+  padding: 10px 24px;
+  font-size: 1rem;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #e68a00;
+}

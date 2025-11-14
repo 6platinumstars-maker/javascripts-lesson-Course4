@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TravelBloom - Travel Recommendations</title>
+  <!-- 後でスタイルを追加する場合 -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- 後でJavaScriptを追加する場合 -->
+  <script src="travel_recommendation.js" defer></script>
+</head>
+<body>
+
+  <!-- ここにナビバー（Task 2） -->
+  <header>
+  <nav class="navbar">
+    <div class="logo">
+      <!-- サイト名やロゴ -->
+      <span>TravelBloom</span>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="travel_recommendation.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+
+    <div class="nav-search">
+      <input 
+        type="text" 
+        id="searchInput" 
+        placeholder="Search for beaches, temples, or countries..."
+      />
+      <button id="searchBtn">Search</button>
+      <button id="resetBtn">Reset</button>
+    </div>
+  </nav>
+</header>
+
+  <!-- ここにホームページ本体（Task 3） -->
+<main>
+  <!-- ヒーローセクション（背景画像＋テキスト） -->
+  <section class="hero">
+    <!-- 左側：紹介テキスト -->
+    <div class="hero-overlay">
+      <h1>Discover Your Next Destination</h1>
+      <p>
+        TravelBloom helps you explore beaches, temples, and vibrant cities 
+        around the world. Find your perfect getaway with personalized recommendations.
+      </p>
+      <button class="book-btn">Book Now</button>
+
+      <!-- ソーシャルアイコン（任意） -->
+      <div class="social-icons">
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      </div>
+
+    </div>
+
+    <!-- 右側：検索結果 -->
+    <div id="results" class="results-panel">
+      <!-- JavaScriptで検索結果カードが追加される -->
+    </div>
+  </section>
+</main>
+
+
+</body>
+</html>
